@@ -1,0 +1,20 @@
+[
+    {
+        "type": "File",
+        "name": "c:\\xampp\\htdocs\\MoVik\\routes\\web.php",
+        "parent_id": null,
+        "fsPath": "c:\\xampp\\htdocs\\MoVik\\routes\\web.php",
+        "workspaceRoot": null,
+        "workspacePath": null,
+        "id": "E0U9DfIcMRstlLQ8"
+    },
+    {
+        "type": "Directory",
+        "name": "c:\\xampp\\htdocs\\MoVik\\resources\\sass",
+        "parent_id": null,
+        "fsPath": "c:\\xampp\\htdocs\\MoVik\\resources\\sass",
+        "workspaceRoot": null,
+        "workspacePath": null,
+        "id": "87yZ1zeklHTV9bxM"
+    }
+]
