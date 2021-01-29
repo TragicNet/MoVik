@@ -6,7 +6,8 @@ $body-color: theme(body-color);*/
   padding: 0;
   box-sizing: border-box;
   position: relative;
-  font-family: "Kalam";
+  font-family: "Montserrat";
+  font-size: 18px;
 }
 
 a {
@@ -30,58 +31,63 @@ body {
   color: white;
 }
 
+.logo {
+  background-color: #fa372c;
+  color: white;
+  font-weight: bold;
+}
+
 .header {
-  width: 100%;
   height: 100px;
 }
 .header .logo {
-  position: relative;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   display: inline-flex;
   flex-direction: column;
   align-items: center;
-  font-size: 1.5rem;
+  padding: 0.5rem;
 }
 .header .logo .title {
-  display: inline-flex;
+  font-size: 1.75rem;
 }
 .header .logo .tagline {
-  margin-top: -10px;
-  display: flex;
-  font-size: 0.7rem;
-}
-
-.logo {
-  display: inline-block;
-  background-color: #FA372C;
-  color: white;
-  padding: 10px 10px;
-  align-items: center;
+  font-weight: normal;
+  margin-top: -5px;
+  font-size: 0.75rem;
 }
 
 .navbar {
   display: flex;
-  width: 100%;
-  height: 48px;
+  height: 2rem;
   background-color: black;
-  color: #FA372C;
-  margin-top: 10px;
+  color: #808080;
   position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 1;
+  /*.container:hover .navitem.active {
+      color: #808080;
+      border-color: transparent;
+  }*/
 }
-
+.navbar .container {
+  display: flex;
+}
 .navbar .navitem {
-  padding: 10px 10px;
   display: inline-flex;
-  height: 100%;
+  justify-content: center;
   align-items: center;
   border-bottom: 2px solid transparent;
+  padding: 0.5rem;
 }
-
+.navbar .navitem.active {
+  border-color: #fa372c;
+  color: #fa372c;
+  color: #ffffff;
+}
 .navbar .navitem:hover {
-  border-bottom: 2px solid #FA372C;
+  color: #ffffff;
+  border-color: #fa372c;
 }
