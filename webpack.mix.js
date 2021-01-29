@@ -15,3 +15,4 @@ mix.js('resources/js/app.js', 'public/js')
     .sass('resources/sass/style.scss', 'public/css')
     .sass('resources/sass/style1.scss', 'public/css');
 
+mix.browserSync('127.0.0.1:8000');

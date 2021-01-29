@@ -79,10 +79,8 @@ body {
         padding: 0.5rem;
         font-size: 14px;
     }
-    .navitem.active {
-        @include themify() {
-            color: #fa372c;
-        }
+    .navitem.active:not(.home) {
+        color: #fa372c;
         border-color: #fa372c;
     }
 }

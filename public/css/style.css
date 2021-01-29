@@ -68,11 +68,11 @@ body {
 }
 .theme-light .navbar {
   background-color: #ffffff;
-  color: #808080;
+  color: #72767f;
 }
 .theme-dark .navbar {
   background-color: #000000;
-  color: #808080;
+  color: #b7bbc0;
 }
 .navbar .container {
   display: flex;
@@ -85,12 +85,7 @@ body {
   padding: 0.5rem;
   font-size: 14px;
 }
-.navbar .navitem.active {
+.navbar .navitem.active:not(.home) {
+  color: #fa372c;
   border-color: #fa372c;
-}
-.theme-light .navbar .navitem.active {
-  color: #fa372c;
-}
-.theme-dark .navbar .navitem.active {
-  color: #fa372c;
 }
