@@ -1,12 +1,18 @@
 @import "variables";
 
 * {
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    position: relative;
     font-family: 'Montserrat';
-    font-size: 18px;
+}
+
+h1 {
+    @include themify($themes) {
+        background-color: theme('body-bgcolor');
+    }
 }
 
 a {
@@ -28,15 +34,15 @@ body {
     background-position: 50%;
 }
 
-.logo {
+.navbar .home, .header .logo {
     background-color: #fa372c;
     color: white;
     font-weight: bold;
 }
 
 .header {
-    //width: 100%;
     height: 100px;
+
     .logo {
         top: 50%;
         left: 50%;
@@ -60,14 +66,14 @@ body {
 .navbar {
     display: flex;
     height: 2rem;
-    background-color: black;
+    background-color: #000000;
     color: #808080;
     position: sticky;
     top: 0;
     z-index: 1;
+
     .container {
         display: flex;
-        //height: 2rem;
     }
     .navitem {
         display: inline-flex;
@@ -75,6 +81,7 @@ body {
         align-items: center;
         border-bottom: 2px solid transparent;
         padding: 0.5rem;
+        font-size: 14px;
     }
     .navitem.active {
         border-color: #fa372c;
@@ -85,9 +92,4 @@ body {
         color: #ffffff;
         border-color: #fa372c;
     }
-    /*.container:hover .navitem.active {
-        color: #808080;
-        border-color: transparent;
-    }*/
-
 }

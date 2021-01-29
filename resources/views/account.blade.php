@@ -2,7 +2,7 @@
 
 @section('content')
     <script>
-        $(document).ready(function() {
+        jQuery(function() {
             $('.account').toggleClass('active');
         });
 

@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MoVik</title>
+
+    {{-- CSS --}}
     <link rel="stylesheet" href="{{ mix('css/style.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -12,17 +14,9 @@
     <link href='https://fonts.googleapis.com/css?family=Kalam' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
 
+    {{-- JavaScript/jQuery --}}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $('.themeButton').click(function() {
-                var html = document.documentElement;
-                $(html).toggleClass('theme-light');
-                $(html).toggleClass('theme-dark');
-            });
-        });
-
-    </script>
+    <script src="{{ asset('js/app.js') }}"></script>
 </head>
 
 <body>
