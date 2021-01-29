@@ -9,12 +9,6 @@
     font-family: 'Montserrat';
 }
 
-h1 {
-    @include themify($themes) {
-        background-color: theme('body-bgcolor');
-    }
-}
-
 a {
     text-decoration: none;
     outline: 0;
@@ -22,9 +16,9 @@ a {
 }
 
 body {
-    @include themify($themes) {
+    @include themify() {
         //background-color: theme('body-bgcolor');
-        color: theme('body-color');
+        color: theme(body-color);
     }
     min-height: 200vh;
     background-image: url("/img/background.jpg");
@@ -36,7 +30,7 @@ body {
 
 .navbar .home, .header .logo {
     background-color: #fa372c;
-    color: white;
+    color: #ffffff;
     font-weight: bold;
 }
 
@@ -56,21 +50,23 @@ body {
             font-size: 1.75rem;
         }
         .tagline {
-            font-weight: normal;
             margin-top: -5px;
             font-size: 0.75rem;
+            font-weight: normal;
         }
     }
 }
 
 .navbar {
-    display: flex;
-    height: 2rem;
-    background-color: #000000;
-    color: #808080;
+    @include themify() {
+        background-color: theme('body-bgcolor');
+        color: theme('body-altcolor');
+    }
     position: sticky;
     top: 0;
     z-index: 1;
+    display: flex;
+    height: 2rem;
 
     .container {
         display: flex;
@@ -84,12 +80,9 @@ body {
         font-size: 14px;
     }
     .navitem.active {
-        border-color: #fa372c;
-        color: #fa372c;
-        color: #ffffff;
-    }
-    .navitem:hover {
-        color: #ffffff;
+        @include themify() {
+            color: #fa372c;
+        }
         border-color: #fa372c;
     }
 }

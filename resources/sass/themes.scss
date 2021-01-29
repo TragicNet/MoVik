@@ -1,11 +1,13 @@
 $themes: (
     light: (
-        body-bgcolor: white,
-        body-color: black,
+        body-bgcolor: #ffffff,
+        body-color: #000000,
+        body-altcolor: #808080,
     ),
     dark: (
-        body-bgcolor: black,
-        body-color: white,
+        body-bgcolor: #000000,
+        body-color: #ffffff,
+        body-altcolor: #808080,
     ),
 );
 

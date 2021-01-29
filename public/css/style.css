@@ -10,13 +10,6 @@ $body-color: theme(body-color);*/
   font-family: "Montserrat";
 }
 
-.theme-light h1 {
-  background-color: white;
-}
-.theme-dark h1 {
-  background-color: black;
-}
-
 a {
   text-decoration: none;
   outline: 0;
@@ -32,15 +25,15 @@ body {
   background-position: 50%;
 }
 .theme-light body {
-  color: black;
+  color: #000000;
 }
 .theme-dark body {
-  color: white;
+  color: #ffffff;
 }
 
 .navbar .home, .header .logo {
   background-color: #fa372c;
-  color: white;
+  color: #ffffff;
   font-weight: bold;
 }
 
@@ -60,20 +53,26 @@ body {
   font-size: 1.75rem;
 }
 .header .logo .tagline {
-  font-weight: normal;
   margin-top: -5px;
   font-size: 0.75rem;
+  font-weight: normal;
 }
 
 .navbar {
-  display: flex;
-  height: 2rem;
-  background-color: #000000;
-  color: #808080;
   position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 1;
+  display: flex;
+  height: 2rem;
+}
+.theme-light .navbar {
+  background-color: #ffffff;
+  color: #808080;
+}
+.theme-dark .navbar {
+  background-color: #000000;
+  color: #808080;
 }
 .navbar .container {
   display: flex;
@@ -88,10 +87,10 @@ body {
 }
 .navbar .navitem.active {
   border-color: #fa372c;
-  color: #fa372c;
-  color: #ffffff;
 }
-.navbar .navitem:hover {
-  color: #ffffff;
-  border-color: #fa372c;
+.theme-light .navbar .navitem.active {
+  color: #fa372c;
+}
+.theme-dark .navbar .navitem.active {
+  color: #fa372c;
 }
