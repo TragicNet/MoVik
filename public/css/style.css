@@ -17,7 +17,6 @@ a {
 
 body {
   min-height: 200vh;
-  background-color: #ffffff;
   background-image: url("/img/background.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
