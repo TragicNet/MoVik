@@ -29,11 +29,13 @@
 
     @include('includes.navbar')
 
-    @yield('content')
+    <main>
+        @yield('content')
 
-    @include('includes.sidebar')
+        @include('includes.sidebar')
 
-    <button class="themeButton">Theme</button>
+        <button class="themeButton">Theme</button>
+    </main>
 
 </body>
 
