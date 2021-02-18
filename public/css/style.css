@@ -91,7 +91,6 @@ body {
 
 main {
   background: inherit;
-  min-height: 200px;
   z-index: 1;
   overflow: hidden;
   border-radius: 5px;

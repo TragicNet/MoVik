@@ -1,6 +1,7 @@
 @extends('layout/app')
 
 @section('content')
+    {{-- {{ $username = 'abc' }} --}}
     <script>
         jQuery(function() {
             $('.home').toggleClass('active');
@@ -8,6 +9,7 @@
 
     </script>
     <h1>Home</h1>
+    <b>{{ $username ?? null }}</b>
 @endsection
 
 @section('sidebar')

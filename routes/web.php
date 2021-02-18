@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CustomerController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,28 +14,40 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('', function () {
     return view('home');
     //return 123;
     //return view('welcome');
 });
 
-Route::get('/home', function () {
+Route::get('home', function () {
     return view('home');
 });
 
-Route::get('/menu', function () {
+Route::get('menu', function () {
     return view('menu');
 });
 
-Route::get('/submenu', function () {
+Route::get('submenu', function () {
     return view('submenu');
 });
 
-Route::get('/detail', function () {
+Route::get('detail', function () {
     return view('detail');
 });
 
-Route::get('/account', function () {
+Route::get('account', function () {
     return view('account');
 });
+
+Route::get('customer_show', [CustomerController::class, 'show']);
+
+Route::get('customer_delete/{id}', [CustomerController::class, 'destroy']);
+
+Route::get('customer_create', [CustomerController::class, 'create']);
+
+Route::post('customer_submit', [CustomerController::class, 'store']);
+
+Route::get('customer_edit/{id}', [CustomerController::class, 'edit']);
+
+Route::post('customer_update/{id}', [CustomerController::class, 'update'])->name('customer.update');
