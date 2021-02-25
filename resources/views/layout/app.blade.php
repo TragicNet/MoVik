@@ -30,7 +30,7 @@
     @include('includes.navbar')
 
     <main>
-        @yield('content')
+        <div>@yield('content')</div>
 
         @include('includes.sidebar')
 

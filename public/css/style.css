@@ -3,7 +3,7 @@ $body-bgcolor: theme(body-bgcolor);
 $body-color: theme(body-color);*/
 * {
   position: relative;
-  box-sizing: border-box;
+  box-sizing: border-box222222;
   margin: 0;
   padding: 0;
   font-family: "Montserrat";
@@ -13,6 +13,15 @@ a {
   text-decoration: none;
   outline: 0;
   color: inherit;
+}
+
+input {
+  border: none;
+  border-bottom: 1px solid #fa372c;
+  background: transparent;
+  outline: none;
+  font-size: inherit;
+  color: #fa372c;
 }
 
 body {
@@ -37,6 +46,7 @@ body {
 }
 
 .header {
+  color: #ffffff;
   height: 100px;
 }
 .header .logo {
@@ -84,7 +94,7 @@ body {
   padding: 0.5rem;
   font-size: 14px;
 }
-.navbar .navitem.active:not(.home) {
+.navbar .active:not(.home) {
   color: #fa372c;
   border-color: #fa372c;
 }
@@ -105,7 +115,7 @@ main::before {
   left: 0;
   right: 0;
   bottom: 0;
-  filter: blur(10px);
+  filter: blur(20px);
   margin: -1rem;
   transform: translatez(0);
   -webkit-transform: translatez(0);
@@ -115,4 +125,38 @@ main::before {
 }
 .theme-dark main::before {
   box-shadow: inset 0 0 2000px rgba(0, 0, 0, 0.7);
+}
+
+.login {
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  display: none;
+}
+.login .container {
+  /*@include themify() {
+      background-color: rgba(theme(body-bgcolor), 0.8);
+      color: theme(body-color);
+  }*/
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #ffffff;
+  overflow: hidden;
+  border-radius: 5px;
+  width: 320px;
+  height: 420px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 11;
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+  padding: 70px 30px;
+}
+
+.login.active {
+  display: block;
 }
