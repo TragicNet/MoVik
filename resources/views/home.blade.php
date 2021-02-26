@@ -5,6 +5,7 @@
         jQuery(function() {
             $('.home').toggleClass('active');
         });
+
     </script>
     <h1>Home</h1>
     <b>{{ $username ?? null }}</b>

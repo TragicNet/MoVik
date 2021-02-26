@@ -1859,11 +1859,19 @@ jQuery(function () {
     $(html).toggleClass('theme-light');
     $(html).toggleClass('theme-dark');
   });
+
+  function close(ele) {
+    ele.toggleClass('active');
+    $('body').css('overflow', 'auto');
+  }
+
   $('.login').on('click', function (event) {
     if (!$(event.target).closest('.login .container').length) {
-      $('.login').toggleClass('active');
-      $('body').css('overflow', 'auto');
+      close($('.login'));
     }
+  });
+  $('.close-button').on('click', function () {
+    close($(this).parents('.active'));
   });
   $('.navitem.account').on('click', function () {
     if (logged != null) {
