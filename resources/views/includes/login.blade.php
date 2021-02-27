@@ -1,26 +1,27 @@
 @section('login')
-    <div class="login active">
-        <div class="container">
-            <button type="button" class="close-button top-right">x</button>
-            <div class="login-content">
-                <div>Login</div>
-                <div class="registration-form">
-                    <form id="registration-form">
-                        <div class="form-group form-input">
-                            <input type="text" name="name" id="name" value="" required />
-                            <label for="name" class="form-label">Name</label>
+    <div class='login'>
+        <div class='container'>
+            <button type='button' class='close-btn top-right'>x</button>
+            <div class='content'>
+                <h2>Login</h2>
+                <div class='login-form'>
+                    <form id='login-form' action='' method='POST' autocomplete="off">
+                        <div class='form-group form-input'>
+                            <input type='text' name='name' id='login-name' value='' required />
+                            <label for='name' class='form-label'>Name</label>
                         </div>
-                        <div class="form-group form-input">
-                            <input type="text" name="phone" id="phone" value="" required />
-                            <label for="phone" class="form-label">Phone number</label>
+                        <div class='form-group form-input'>
+                            <input type='password' name='password' id='login-password' value='' required />
+                            <label for='password' class='form-label'>Password</label>
                         </div>
-                        <div class="form-group form-input">
-                            <input type="text" name="email" id="email" value="" required />
-                            <label for="email" class="form-label">Email</label>
+                        <br>
+                        <div class='form-submit'>
+                            <input type='submit' value='Login' class='submit' id='login-submit' name='submit' />
                         </div>
-                        <div class="form-group form-input">
-                            <input type="text" name="address" id="address" value="" required />
-                            <label for="address" class="form-label">Address</label>
+                        <br>
+                        <div class='links'>
+                            <a href='javascript:;' class="register-btn">Register</a>
+                            <a href=''>Forgot Password?</a>
                         </div>
                     </form>
                 </div>

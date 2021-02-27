@@ -7,6 +7,7 @@ $body-color: theme(body-color);*/
   margin: 0;
   padding: 0;
   font-family: "Montserrat";
+  overflow: hidden;
 }
 
 a {
@@ -15,10 +16,13 @@ a {
   color: inherit;
 }
 
-.close-button {
+button {
+  outline: none;
+}
+
+.close-btn {
   border: none;
-  display: inline-block;
-  padding: 8px 16px;
+  padding: 16px 16px;
   vertical-align: middle;
   overflow: hidden;
   text-decoration: none;
@@ -51,9 +55,15 @@ a {
   -webkit-transition: 0.25s ease;
   -o-transition: 0.25s ease;
   -ms-transition: 0.25s ease;
-  color: #bebebe;
+  pointer-events: none;
   left: 3px;
   top: 50%;
+}
+.theme-light .form-label {
+  color: #61636b;
+}
+.theme-dark .form-label {
+  color: #bebebe;
 }
 
 input {
@@ -74,7 +84,7 @@ input {
 
 input:focus + .form-label, input:valid + .form-label {
   top: 3px;
-  font-size: 11px;
+  font-size: 12px;
   color: #fa372c;
 }
 
@@ -83,10 +93,16 @@ input, select {
   width: 100%;
   display: block;
   border: none;
-  color: #ffffff;
   background: transparent;
-  border-bottom: 1px solid #bebebe;
   padding: 4px 3px;
+}
+.theme-light input, .theme-light select {
+  border-bottom: 1px solid #61636b;
+  color: #61636b;
+}
+.theme-dark input, .theme-dark select {
+  border-bottom: 1px solid #bebebe;
+  color: #bebebe;
 }
 
 input:focus, select:focus {
@@ -97,13 +113,16 @@ input:-webkit-autofill {
   box-shadow: 0 0 0 30px transparent inset;
 }
 
-input::-webkit-input-placeholder {
-  color: #bebebe;
+.theme-light input::-webkit-input-placeholder,
+.theme-light input::-moz-placeholder,
+.theme-light input:-ms-input-placeholder,
+.theme-light input:-moz-placeholder {
+  color: #61636b;
 }
-
-input::-moz-placeholder,
-input:-ms-input-placeholder,
-input:-moz-placeholder {
+.theme-dark input::-webkit-input-placeholder,
+.theme-dark input::-moz-placeholder,
+.theme-dark input:-ms-input-placeholder,
+.theme-dark input:-moz-placeholder {
   color: #bebebe;
 }
 
@@ -111,19 +130,33 @@ input:required {
   box-shadow: none;
 }
 
+.submit {
+  background: rgba(250, 55, 44, 0.8);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.submit:hover {
+  background: #fa372c;
+}
+
 body {
-  min-height: 200vh;
+  width: 100vw;
+  height: 100vh;
   background-image: url("/img/background.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
+  left: 0;
   background-position: 50%;
 }
 .theme-light body {
   color: #000000;
 }
 .theme-dark body {
-  color: #ffffff;
+  color: #bebebe;
 }
 
 .navbar .home, .header .logo {
@@ -158,22 +191,24 @@ body {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
+  left: 0;
   z-index: 10;
   display: flex;
   height: 2rem;
 }
 .theme-light .navbar {
-  background-color: #ffffff;
-  color: #72767f;
+  background-color: #f0f0f0;
+  color: #61636b;
 }
 .theme-dark .navbar {
   background-color: #000000;
-  color: #b7bbc0;
+  color: #bebebe;
 }
 .navbar .container {
   display: flex;
 }
 .navbar .navitem {
+  overflow: hidden;
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -188,10 +223,13 @@ body {
 
 main {
   background: inherit;
-  z-index: 1;
+  position: relative;
   overflow: hidden;
+  height: 1000px;
+  z-index: 1;
   border-radius: 5px;
   margin: 1rem;
+  padding: 20px;
 }
 
 main::before {
@@ -203,20 +241,20 @@ main::before {
   right: 0;
   bottom: 0;
   filter: blur(20px);
-  margin: -1rem;
+  margin: 1rem;
   transform: translatez(0);
   -webkit-transform: translatez(0);
 }
 .theme-light main::before {
-  box-shadow: inset 0 0 2000px rgba(255, 255, 255, 0.7);
+  box-shadow: inset 0 0 2000px rgba(240, 240, 240, 0.7);
 }
 .theme-dark main::before {
   box-shadow: inset 0 0 2000px rgba(0, 0, 0, 0.7);
 }
 
 .login, .register {
-  height: 100%;
-  width: 100%;
+  height: 100vh;
+  width: 100vw;
   background: rgba(0, 0, 0, 0.5);
   position: absolute;
   top: 0;
@@ -225,25 +263,37 @@ main::before {
   display: none;
 }
 .login .container, .register .container {
-  /*@include themify() {
-      background-color: rgba(theme(body-bgcolor), 0.8);
-      color: theme(body-color);
-  }*/
-  background-color: rgba(0, 0, 0, 0.5);
-  color: #ffffff;
-  overflow: hidden;
   border-radius: 5px;
+  text-align: center;
   width: 320px;
-  height: 420px;
-  position: fixed;
+  overflow: auto;
+  position: relative;
   top: 50%;
   left: 50%;
   z-index: 11;
   transform: translate(-50%, -50%);
-  box-sizing: border-box;
-  padding: 70px 30px;
+  padding: 60px 30px;
+}
+.theme-light .login .container, .theme-light .register .container {
+  background-color: rgba(240, 240, 240, 0.8);
+  color: #61636b;
+}
+.theme-dark .login .container, .theme-dark .register .container {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #bebebe;
+}
+.login .container .links, .register .container .links {
+  display: flex;
+  justify-content: space-between;
 }
 
 .login.active, .register.active {
   display: block;
+}
+
+@media only screen and (max-height: 320px) {
+  .login .container, .register .container {
+    top: 0;
+    transform: translate(-50%, 0);
+  }
 }

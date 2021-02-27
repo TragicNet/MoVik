@@ -15,3 +15,4 @@
     @show
 </div>
 @include('includes.login')
+@include('includes.register')
