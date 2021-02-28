@@ -242,9 +242,6 @@ main::before {
     z-index: 10;
     display: none;
     .container {
-        /*display: flex;
-        justify-content: center;
-        align-items: center;*/
         @include themify() {
             background-color: rgba(theme(body-bgcolor), 0.8);
             color: theme(body-altcolor);
@@ -252,11 +249,9 @@ main::before {
         border-radius: 5px;
         text-align: center;
         width: 320px;
+        margin: auto;
         overflow: auto;
         position: relative;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%,-50%);
         z-index: 11;
         padding: 60px 30px;
         .links {
@@ -267,7 +262,7 @@ main::before {
     }
 }
 .login.active, .register.active {
-    display: block;
+    display: flex;
 }
 
 /*@media only screen and (max-height: 320px) {
@@ -277,14 +272,4 @@ main::before {
             transform: translate(-50%, 0);
         }
     }
-}
-
-@media only screen and (max-height: 480px) {
-    .register {
-        .container {
-            top: 0;
-            transform: translate(-50%, 0);
-        }
-    }
-}
-*/
+}*/
