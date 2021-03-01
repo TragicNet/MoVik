@@ -1865,14 +1865,12 @@ jQuery(function () {
       return true;
     }
 
-    $('body').css('overflow-y', 'hidden');
     $('.login').toggleClass('active');
   });
 
   function close(ele) {
     ele.find('form').trigger('reset');
     ele.toggleClass('active');
-    $('body').css('overflow-y', 'auto');
   }
 
   $('.login, .register').on('click', function (event) {
@@ -1890,7 +1888,14 @@ jQuery(function () {
   $(document).on('keydown', function (e) {
     if (e.key === 'Escape') {
       close($('.login.active, .register.active'));
+      console.log('Pressed Esc');
     }
+  });
+  $('body').on('scroll', function () {
+    if ($('body').scrollTop() > 100) $('.scroll-to-top').show();else $('.scroll-to-top').hide();
+  });
+  $('.scroll-to-top').on('click', function () {
+    $('body').scrollTop(0);
   });
 });
 
