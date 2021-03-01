@@ -12,6 +12,12 @@
             <a class="navitem order" href="">Order</a>
             <a class="navitem account" href="javascript:;">{{ $username ?? 'Account' }}</a>
         </div>
+        <div class="theme-button">
+            <div class="switch">
+                <input type="checkbox">
+                <span class="slider round"></span>
+            </div>
+        </div>
     @show
 </div>
 @include('includes.login')

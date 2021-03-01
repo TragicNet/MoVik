@@ -202,6 +202,7 @@ body {
         background-color: theme(body-bgcolor);
         color: theme(body-altcolor);
     }
+    overflow: visible;
     position: sticky;
     top: 0;
     left: 0;
@@ -211,19 +212,80 @@ body {
 
     .container {
         display: flex;
+        .navitem {
+            overflow: hidden;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            border-bottom: 2px solid transparent;
+            padding: 0.5rem;
+            font-size: 14px;
+        }
+        .active:not(.home) {
+            color: #fa372c;
+            border-color: #fa372c;
+        }
     }
-    .navitem {
-        overflow: hidden;
-        display: inline-flex;
-        justify-content: center;
-        align-items: center;
-        border-bottom: 2px solid transparent;
-        padding: 0.5rem;
-        font-size: 14px;
+}
+
+.theme-button {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    margin-right: 7px;
+}
+
+.switch {
+    display: inline-block;
+    width: 40px;
+    height: 22px;
+    input {
+        opacity: 0;
+        width: 0;
+        height: 0;
     }
-    .active:not(.home) {
-        color: #fa372c;
-        border-color: #fa372c;
+    .slider {
+        @include themify() {
+            background: theme(body-color);
+        }
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: 20px;
+        -webkit-transition: .4s;
+        transition: .4s;
+        &:before {
+            @include themify() {
+                background: theme(body-bgcolor);
+            }
+            position: absolute;
+            content: "";
+            height: 14px;
+            width: 14px;
+            left: 4px;
+            bottom: 4px;
+            border-radius: 50%;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+    }
+    input:checked + .slider {
+        @include themify() {
+            background: theme(body-color);
+        }
+    }
+    input:focus + .slider {
+        @include themify() {
+            box-shadow: 0 0 1px theme(body-color);
+        }
+    }
+    input:checked + .slider:before {
+        -webkit-transform: translateX(14px);
+        -ms-transform: translateX(14px);
+        transform: translateX(14px);
     }
 }
 
@@ -288,61 +350,6 @@ main {
 }
 .login.active, .register.active {
     display: flex;
-}
-
-.switch {
-    position: relative;
-    display: inline-block;
-    width: 60px;
-    height: 34px;
-    input {
-        opacity: 0;
-        width: 0;
-        height: 0;
-    }
-    .slider {
-        @include themify() {
-            background: theme(body-bgcolor);
-        }
-        position: absolute;
-        cursor: pointer;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        border-radius: 34px;
-        -webkit-transition: .4s;
-        transition: .4s;
-        &:before {
-            @include themify() {
-                background: theme(body-color);
-            }
-            position: absolute;
-            content: "";
-            height: 26px;
-            width: 26px;
-            left: 4px;
-            bottom: 4px;
-            border-radius: 50%;
-            -webkit-transition: .4s;
-            transition: .4s;
-        }
-    }
-    input:checked + .slider {
-        @include themify() {
-            background: theme(body-bgcolor);
-        }
-    }
-    input:focus + .slider {
-        @include themify() {
-            box-shadow: 0 0 1px theme(body-bgcolor);
-        }
-    }
-    input:checked + .slider:before {
-        -webkit-transform: translateX(26px);
-        -ms-transform: translateX(26px);
-        transform: translateX(26px);
-    }
 }
 
 /*@media only screen and (max-height: 320px) {

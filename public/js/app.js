@@ -1895,6 +1895,9 @@ jQuery(function () {
   $('body').on('scroll', function () {
     if ($('body').scrollTop() > 100) $('.scroll-to-top').show();else $('.scroll-to-top').hide();
   });
+  $('.scroll-to-top').on('click', function () {
+    $('body').scrollTop(0);
+  });
 });
 
 /***/ }),

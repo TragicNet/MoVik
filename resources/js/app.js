@@ -63,4 +63,8 @@ jQuery(function () {
             $('.scroll-to-top').hide();
     })
 
+    $('.scroll-to-top').on('click', function() {
+        $('body').scrollTop(0);
+    })
+
 });
