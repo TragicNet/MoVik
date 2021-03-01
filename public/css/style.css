@@ -8,11 +8,11 @@ $body-color: theme(body-color);*/
   padding: 0;
   font-family: "Montserrat";
   overflow-x: hidden;
-  transition: 0.25s ease;
-  -moz-transition: 0.25s ease;
-  -webkit-transition: 0.25s ease;
-  -o-transition: 0.25s ease;
-  -ms-transition: 0.25s ease;
+  transition: 0.01s ease;
+  -moz-transition: 0.01s ease;
+  -webkit-transition: 0.01s ease;
+  -o-transition: 0.01s ease;
+  -ms-transition: 0.01s ease;
 }
 
 a {
@@ -177,7 +177,7 @@ body {
   background-position: 50%;
 }
 .theme-light body {
-  color: #222222;
+  color: #202020;
 }
 .theme-dark body {
   color: #bebebe;
@@ -255,26 +255,29 @@ main {
   margin: 1rem;
   padding: 20px;
 }
-
-main::before {
-  content: "";
-  background: inherit;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  filter: blur(20px);
-  /*transform:translatez(0);
-  -webkit-transform:translatez(0);*/
+.theme-light main {
+  background: rgba(240, 240, 240, 0.8);
 }
-.theme-light main::before {
-  box-shadow: inset 0 0 1000px rgba(240, 240, 240, 0.8);
-}
-.theme-dark main::before {
-  box-shadow: inset 0 0 1000px rgba(36, 41, 53, 0.8);
+.theme-dark main {
+  background: rgba(36, 41, 53, 0.8);
 }
 
+/*main::before {
+    @include themify() {
+        //box-shadow: inset 0 0 1000px rgba(theme(body-bgcolor), .7);
+        background: rgba(theme(body-bgcolor), .8);
+    }
+    content: '';
+    //background: inherit;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    filter: blur(10px);
+    /*transform:translatez(0);
+    -webkit-transform:translatez(0);*
+}*/
 .login, .register {
   height: 100vh;
   width: 100vw;
@@ -295,11 +298,11 @@ main::before {
   padding: 60px 30px;
 }
 .theme-light .login .container, .theme-light .register .container {
-  background-color: rgba(240, 240, 240, 0.8);
+  background: rgba(240, 240, 240, 0.8);
   color: #61636b;
 }
 .theme-dark .login .container, .theme-dark .register .container {
-  background-color: rgba(36, 41, 53, 0.8);
+  background: rgba(36, 41, 53, 0.8);
   color: #bebebe;
 }
 .login .container .links, .register .container .links {
