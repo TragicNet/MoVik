@@ -6,11 +6,11 @@
                 <h2>Login</h2>
                 <div class='login-form'>
                     <form id='login-form' action='' method='POST' autocomplete="off">
-                        <div class='form-group form-input'>
-                            <input type='text' name='name' id='login-name' value='' required />
-                            <label for='name' class='form-label'>Name</label>
+                        <div class='form-input'>
+                            <input type='text' name='email' id='login-email' value='' required />
+                            <label for='email' class='form-label'>Email</label>
                         </div>
-                        <div class='form-group form-input'>
+                        <div class='form-input'>
                             <input type='password' name='password' id='login-password' value='' required />
                             <label for='password' class='form-label'>Password</label>
                         </div>

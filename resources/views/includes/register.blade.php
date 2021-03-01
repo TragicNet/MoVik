@@ -6,27 +6,27 @@
                 <h2>Register</h2>
                 <div class='registration-form'>
                     <form id='registration-form' action='customer_submit' method='POST' autocomplete="off">
-                        <div class='form-group form-input'>
+                        <div class='form-input'>
                             <input type='text' name='name' id='name' value='' required />
                             <label for='name' class='form-label'>Name</label>
                         </div>
-                        <div class='form-group form-input'>
+                        <div class='form-input'>
                             <input type='text' name='phone' id='phone' value='' required />
                             <label for='phone' class='form-label'>Phone number</label>
                         </div>
-                        <div class='form-group form-input'>
+                        <div class='form-input'>
                             <input type='text' name='email' id='email' value='' required />
                             <label for='email' class='form-label'>Email</label>
                         </div>
-                        <div class='form-group form-input'>
+                        <div class='form-input'>
                             <input type='text' name='address' id='address' value='' required />
                             <label for='address' class='form-label'>Address</label>
                         </div>
-                        <div class='form-group form-input'>
+                        <div class='form-input'>
                             <input type='password' name='password' id='password' value='' required />
                             <label for='password' class='form-label'>Password</label>
                         </div>
-                        <div class='form-group form-input'>
+                        <div class='form-input'>
                             <input type='password' name='confirmPassword' id='confirmPassword' value='' required />
                             <label for='confirmPassword' class='form-label'>Confirm Password</label>
                         </div>
