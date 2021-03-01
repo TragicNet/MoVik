@@ -8,6 +8,11 @@ $body-color: theme(body-color);*/
   padding: 0;
   font-family: "Montserrat";
   overflow-x: hidden;
+  transition: 0.25s ease;
+  -moz-transition: 0.25s ease;
+  -webkit-transition: 0.25s ease;
+  -o-transition: 0.25s ease;
+  -ms-transition: 0.25s ease;
 }
 
 a {
@@ -20,23 +25,40 @@ button {
   outline: none;
 }
 
-.close-btn {
+.close-btn, .scroll-to-top {
   border: none;
-  padding: 16px 16px;
-  vertical-align: middle;
+  margin: 14px;
+  font-size: 20px;
   overflow: hidden;
   text-decoration: none;
   color: inherit;
   background-color: transparent;
-  text-align: center;
   cursor: pointer;
   white-space: nowrap;
 }
 
 .top-right {
   position: absolute;
-  right: 0;
   top: 0;
+  right: 0;
+}
+
+.bottom-right {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.scroll-to-top {
+  position: fixed;
+  font-size: 24px;
+  margin: 14px 28px;
+  z-index: 10;
+  bottom: 0;
+  opacity: 0.8;
+}
+.scroll-to-top:hover {
+  opacity: 1;
 }
 
 .form-input {
@@ -137,10 +159,10 @@ input[type=submit] {
   border: none;
   border-radius: 20px;
   cursor: pointer;
+  opacity: 0.8;
 }
-
 input[type=submit]:hover {
-  background: rgba(250, 55, 44, 0.7);
+  opacity: 1;
 }
 
 body {
@@ -259,7 +281,7 @@ main::before {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 10;
+  z-index: 11;
   display: none;
 }
 .login .container, .register .container {
@@ -269,7 +291,6 @@ main::before {
   margin: auto;
   overflow: auto;
   position: relative;
-  z-index: 11;
   padding: 60px 30px;
 }
 .theme-light .login .container, .theme-light .register .container {

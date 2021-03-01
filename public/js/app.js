@@ -1887,6 +1887,11 @@ jQuery(function () {
     $('.login, .register').find('form').trigger('reset');
     $('.login, .register').toggleClass('active');
   });
+  $(document).on('keydown', function (e) {
+    if (e.key === 'Escape') {
+      close($('.login.active, .register.active'));
+    }
+  });
 });
 
 /***/ }),

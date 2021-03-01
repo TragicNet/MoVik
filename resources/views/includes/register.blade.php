@@ -1,7 +1,9 @@
 @section('register')
     <div class='register'>
         <div class='container'>
-            <button type='button' class='close-btn top-right'>x</button>
+            <button type='button' class='close-btn top-right'>
+                <i class="fa fa-times-circle"></i>
+            </button>
             <div class='content'>
                 <h2>Register</h2>
                 <div class='registration-form'>

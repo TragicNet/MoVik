@@ -22,10 +22,12 @@
 
 <body>
 
-    <header class="header"><a class="logo" href="\home">
+    <header class="header">
+        <a class="logo" href="\home">
             <span class="title">MoVik</span>
             <span class="tagline">Your Food is On the Way</span>
-        </a></header>
+        </a>
+    </header>
 
     @include('includes.navbar')
 
@@ -36,6 +38,10 @@
 
         <button class="themeButton">Theme</button>
     </main>
+
+    <div class="scroll-to-top bottom-right">
+        <i class="fa fa-chevron-circle-up"></i>
+    </div>
 
 </body>
 
