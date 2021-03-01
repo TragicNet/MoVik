@@ -283,9 +283,9 @@ body {
         }
     }
     input:checked + .slider:before {
-        -webkit-transform: translateX(14px);
-        -ms-transform: translateX(14px);
-        transform: translateX(14px);
+        -webkit-transform: translateX(18px);
+        -ms-transform: translateX(18px);
+        transform: translateX(18px);
     }
 }
 

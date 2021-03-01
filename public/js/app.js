@@ -1854,7 +1854,7 @@ jQuery(function () {
       $(this).toggleClass('active');
     }
   });
-  $('.theme-button').on('click', function () {
+  $('.theme-button .switch').on('click', function () {
     var chkbox = $(this).find('input[type="checkbox"]');
     chkbox.prop('checked', !chkbox.prop('checked'));
     $(document.documentElement).toggleClass('theme-light');

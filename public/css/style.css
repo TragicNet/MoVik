@@ -308,7 +308,7 @@ body {
   box-shadow: 0 0 1px #bebebe;
 }
 .switch input:checked + .slider:before {
-  transform: translateX(14px);
+  transform: translateX(18px);
 }
 
 main {
