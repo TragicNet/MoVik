@@ -1854,10 +1854,11 @@ jQuery(function () {
       $(this).toggleClass('active');
     }
   });
-  $('.themeButton').on('click', function () {
-    var html = document.documentElement;
-    $(html).toggleClass('theme-light');
-    $(html).toggleClass('theme-dark');
+  $('.theme-button').on('click', function () {
+    var chkbox = $(this).find('input[type="checkbox"]');
+    chkbox.prop('checked', !chkbox.prop('checked'));
+    $(document.documentElement).toggleClass('theme-light');
+    $(document.documentElement).toggleClass('theme-dark');
   });
   $('.navitem.account').on('click', function () {
     if (logged != null) {
@@ -1893,9 +1894,6 @@ jQuery(function () {
   });
   $('body').on('scroll', function () {
     if ($('body').scrollTop() > 100) $('.scroll-to-top').show();else $('.scroll-to-top').hide();
-  });
-  $('.scroll-to-top').on('click', function () {
-    $('body').scrollTop(0);
   });
 });
 

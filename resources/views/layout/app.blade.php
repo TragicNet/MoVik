@@ -36,7 +36,10 @@
 
         @include('includes.sidebar')
 
-        <button class="themeButton">Theme</button>
+        <div class="theme-button switch">
+            <input type="checkbox">
+            <span class="slider round"></span>
+        </div>
     </main>
 
     <div class="scroll-to-top bottom-right">

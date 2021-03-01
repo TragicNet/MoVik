@@ -14,10 +14,11 @@ jQuery(function () {
         }
     })
 
-    $('.themeButton').on('click', function() {
-        var html = document.documentElement;
-        $(html).toggleClass('theme-light');
-        $(html).toggleClass('theme-dark');
+    $('.theme-button').on('click', function() {
+        var chkbox = $(this).find('input[type="checkbox"]');
+        chkbox.prop('checked', !chkbox.prop('checked'));
+        $(document.documentElement).toggleClass('theme-light');
+        $(document.documentElement).toggleClass('theme-dark');
     })
 
     $('.navitem.account').on('click', function() {
@@ -60,10 +61,6 @@ jQuery(function () {
             $('.scroll-to-top').show();
         else
             $('.scroll-to-top').hide();
-    })
-
-    $('.scroll-to-top').on('click', function() {
-        $('body').scrollTop(0);
     })
 
 });
