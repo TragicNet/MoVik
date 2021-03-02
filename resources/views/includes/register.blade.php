@@ -7,6 +7,14 @@
 
         </script>
     @endif
+    @if (session()->has('msg'))
+        <script>
+            jQuery(function() {
+                alert("{{ session('msg') }}");
+            })
+
+        </script>
+    @endif
     <div class='register'>
         <div class='container'>
             <button type='button' class='close-btn top-right'>
@@ -43,9 +51,8 @@
                                 required />
                             <label for='password_confirmation' class='form-label'>Confirm Password</label>
                         </div>
-                        <div class="errorTxt"></div>
                         @if ($errors->any())
-                            <div class="errors">
+                            <div class="error">
                                 <ul>
                                     @foreach ($errors->all() as $error)
                                         <li>{{ $error }}</li>

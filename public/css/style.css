@@ -380,6 +380,9 @@ main {
   color: #fa372c;
   font-size: 12px;
 }
+.login .container .error:not(input) ul, .register .container .error:not(input) ul {
+  list-style: none;
+}
 
 .login.active, .register.active {
   display: flex;

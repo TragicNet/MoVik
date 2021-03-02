@@ -38,8 +38,11 @@ class CustomerController extends Controller
     public function store(Request $request)
     {
         //
-        echo $request;
-        return 'end';
+        $this->validate($request, [
+            //'name' => 'unique:customers, "name"',
+            'email' => 'required|unique:customers, "email"',
+        ]);
+
         $res = new Customer;
         $res->name = $request->input('name');
         $res->password = $request->input('password');
@@ -48,9 +51,8 @@ class CustomerController extends Controller
         $res->address = $request->input('address');
         $res->save();
 
-        $request->session()->flash('msg', 'Data Submitted');
-        return redirect('customer_show');
-        //return $request->input();
+        $request->session()->flash('msg', 'Success!');
+        return redirect()->back();
     }
 
     /**

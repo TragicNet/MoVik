@@ -351,6 +351,9 @@ main {
         .error:not(input) {
             color: #fa372c;
             font-size: 12px;
+            ul {
+                list-style: none;
+            }
         }
     }
 }

@@ -1904,19 +1904,13 @@ jQuery(function () {
         email: true
       },
       password: {
-        min: 6
+        minlength: 6
       },
       password_confirmation: {
         equalTo: "#password"
       }
     },
-    submitHandler: function submitHandler(form) {
-      form.submit();
-    },
     messages: {
-      password: {
-        min: 'Must be at least 6 characters long.'
-      },
       password_confirmation: {
         equalTo: 'Please enter the same password.'
       }
