@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Customer;
 use Illuminate\Http\Request;
+use SebastianBergmann\Environment\Console;
 
 class CustomerController extends Controller
 {
@@ -37,6 +38,8 @@ class CustomerController extends Controller
     public function store(Request $request)
     {
         //
+        echo $request;
+        return 'end';
         $res = new Customer;
         $res->name = $request->input('name');
         $res->password = $request->input('password');

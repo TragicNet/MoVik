@@ -376,6 +376,10 @@ main {
   flex-direction: row-reverse;
   justify-content: space-between;
 }
+.login .container .error:not(input), .register .container .error:not(input) {
+  color: #fa372c;
+  font-size: 12px;
+}
 
 .login.active, .register.active {
   display: flex;

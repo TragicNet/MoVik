@@ -1871,12 +1871,38 @@ jQuery(function () {
 
   function close(ele) {
     ele.find('form').trigger('reset');
+    ele.find('.errors').hide();
+    ele.validate().resetForm();
     ele.toggleClass('active');
   }
 
   $('.login, .register').on('click', function (event) {
     if (!$(event.target).closest('.login .container, .register .container').length) {
       close($(this));
+    }
+  });
+  $('#registration-form').validate({
+    rules: {
+      password_confirmation: {
+        required: true,
+        equalTo: "#password"
+      }
+    },
+    invalidHandler: function invalidHandler(validator) {
+      // 'this' refers to the form
+      console.log('errors');
+    },
+    submitHandler: function submitHandler(form) {
+      // do other things for a valid form
+      form.submit();
+    },
+    messages: {
+      password_confirmation: {
+        equalTo: 'Please enter the same password'
+      }
+    },
+    errorPlacement: function errorPlacement(error, element) {
+      error.insertAfter($(element).closest('.form-input'));
     }
   });
   $('.close-btn').on('click', function () {

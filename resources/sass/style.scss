@@ -98,10 +98,12 @@ input {
     -webkit-appearance: none;
 }
 
-input:focus + .form-label, input:valid + .form-label {
-    top: 3px;
-    font-size: 12px;
-    color: #fa372c;
+input:focus, input:valid {
+        + .form-label {
+        top: 3px;
+        font-size: 12px;
+        color: #fa372c;
+    }
 }
 
 input, select {
@@ -345,6 +347,10 @@ main {
             display: flex;
             flex-direction: row-reverse;
             justify-content: space-between;
+        }
+        .error:not(input) {
+            color: #fa372c;
+            font-size: 12px;
         }
     }
 }
