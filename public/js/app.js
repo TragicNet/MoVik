@@ -1869,11 +1869,10 @@ jQuery(function () {
     $('.login').toggleClass('active');
   });
 
-  function close(ele) {
-    ele.find('form').trigger('reset');
-    ele.find('.errors').hide();
-    ele.validate().resetForm();
-    ele.toggleClass('active');
+  function close(element) {
+    //ele.find('form').trigger('reset');
+    element.find('form').validate().resetForm();
+    element.toggleClass('active');
   }
 
   $('.login, .register').on('click', function (event) {
@@ -1883,8 +1882,10 @@ jQuery(function () {
   });
   $('#registration-form').validate({
     rules: {
+      password: {
+        min: 6
+      },
       password_confirmation: {
-        required: true,
         equalTo: "#password"
       }
     },
@@ -1897,8 +1898,11 @@ jQuery(function () {
       form.submit();
     },
     messages: {
+      password: {
+        min: 'Must be at least 6 characters long.'
+      },
       password_confirmation: {
-        equalTo: 'Please enter the same password'
+        equalTo: 'Please enter the same password.'
       }
     },
     errorPlacement: function errorPlacement(error, element) {
@@ -1913,10 +1917,7 @@ jQuery(function () {
     $('.login, .register').toggleClass('active');
   });
   $(document).on('keydown', function (e) {
-    if (e.key === 'Escape') {
-      close($('.login.active, .register.active'));
-      console.log('Pressed Esc');
-    }
+    if (e.key === 'Escape') close($('.login.active, .register.active'));
   });
   $('body').on('scroll', function () {
     if ($('body').scrollTop() > 100) $('.scroll-to-top').show();else $('.scroll-to-top').hide();

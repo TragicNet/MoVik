@@ -29,11 +29,10 @@ jQuery(function () {
         $('.login').toggleClass('active');
     })
 
-    function close(ele) {
-        ele.find('form').trigger('reset');
-        ele.find('.errors').hide();
-        ele.validate().resetForm();
-        ele.toggleClass('active');
+    function close(element) {
+        //ele.find('form').trigger('reset');
+        element.find('form').validate().resetForm();
+        element.toggleClass('active');
     }
 
     $('.login, .register').on('click', function(event) {
@@ -44,9 +43,11 @@ jQuery(function () {
 
     $('#registration-form').validate({
         rules: {
+            password: {
+                min: 6
+            },
             password_confirmation: {
-                required: true,
-                equalTo: "#password"
+                equalTo: "#password",
             }
         },
         invalidHandler: function(validator) {
@@ -58,8 +59,11 @@ jQuery(function () {
             form.submit();
         },
         messages: {
+            password: {
+                min: 'Must be at least 6 characters long.'
+            },
             password_confirmation: {
-                equalTo: 'Please enter the same password'
+                equalTo: 'Please enter the same password.'
             }
         },
         errorPlacement: function(error, element) {
@@ -77,10 +81,8 @@ jQuery(function () {
     })
 
     $(document).on('keydown', function(e) {
-        if (e.key === 'Escape') {
+        if (e.key === 'Escape')
             close($('.login.active, .register.active'));
-            console.log('Pressed Esc');
-        }
     })
 
     $('body').on('scroll', function() {
