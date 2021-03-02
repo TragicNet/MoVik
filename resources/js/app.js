@@ -43,6 +43,14 @@ jQuery(function () {
 
     $('#registration-form').validate({
         rules: {
+            phone: {
+                digits: true,
+                minlength: 10,
+                maxlength: 10
+            },
+            email: {
+                email: true
+            },
             password: {
                 min: 6
             },
@@ -50,12 +58,7 @@ jQuery(function () {
                 equalTo: "#password",
             }
         },
-        invalidHandler: function(validator) {
-            // 'this' refers to the form
-            console.log('errors');
-        },
         submitHandler: function(form) {
-            // do other things for a valid form
             form.submit();
         },
         messages: {
