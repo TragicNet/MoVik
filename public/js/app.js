@@ -1880,6 +1880,19 @@ jQuery(function () {
       close($(this));
     }
   });
+  $('#login-form').validate({
+    rules: {
+      email: {
+        email: true
+      }
+    },
+    submitHandler: function submitHandler(form) {
+      form.submit();
+    },
+    errorPlacement: function errorPlacement(error, element) {
+      error.insertAfter($(element).closest('.form-input'));
+    }
+  });
   $('#registration-form').validate({
     rules: {
       phone: {

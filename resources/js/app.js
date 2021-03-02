@@ -41,6 +41,20 @@ jQuery(function () {
         }
     })
 
+    $('#login-form').validate({
+        rules: {
+            email: {
+                email: true
+            }
+        },
+        submitHandler: function(form) {
+            form.submit();
+        },
+        errorPlacement: function(error, element) {
+            error.insertAfter($(element).closest('.form-input'));
+        }
+    })
+
     $('#registration-form').validate({
         rules: {
             phone: {
