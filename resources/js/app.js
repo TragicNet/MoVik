@@ -1,3 +1,5 @@
+const { unset } = require('lodash');
+
 require('./bootstrap');
 
 jQuery(function () {
@@ -5,7 +7,7 @@ jQuery(function () {
     var activeClass = null;
     $('.navitem').on('mouseenter', function() {
         activeClass = $('.active');
-        $('.active').toggleClass('active');
+        $('.navitem.active').toggleClass('active');
         $(this).toggleClass('active');
     }).on('mouseleave', function(event) {
         if(activeClass != null) {
@@ -22,10 +24,10 @@ jQuery(function () {
     })
 
     $('.navitem.account').on('click', function() {
-        if(logged != null) {
+        /*if(logged != null) {
             window.location.href = '/account';
             return true;
-        }
+        }*/
         $('.login').toggleClass('active');
     })
 
@@ -34,6 +36,10 @@ jQuery(function () {
         element.find('form').validate().resetForm();
         element.toggleClass('active');
     }
+
+    $('#login-form input, #registration-form input').on('focus', function(element) {
+        $('#login-form, #registration-form').find('.server-errors').hide();
+    })
 
     $('.login, .register').on('click', function(event) {
         if(!$(event.target).closest('.login .container, .register .container').length) {
@@ -46,9 +52,6 @@ jQuery(function () {
             email: {
                 email: true
             }
-        },
-        submitHandler: function(form) {
-            form.submit();
         },
         errorPlacement: function(error, element) {
             error.insertAfter($(element).closest('.form-input'));
@@ -87,6 +90,7 @@ jQuery(function () {
     })
 
     $('.login-btn, .register-btn').on('click', function() {
+        $('#login-form, #registration-form').find('.server-errors').hide();
         $('.login, .register').find('form').trigger('reset');
         $('.login, .register').toggleClass('active');
     })

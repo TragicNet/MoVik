@@ -1,17 +1,9 @@
 @section('register')
-    @if ($errors->any())
+    @if ($errors->any() && !$errors->has('login-error'))
         <script>
             jQuery(function() {
                 $('.register').toggleClass('active');
             });
-
-        </script>
-    @endif
-    @if (session()->has('msg'))
-        <script>
-            jQuery(function() {
-                alert("{{ session('msg') }}");
-            })
 
         </script>
     @endif
@@ -23,7 +15,7 @@
             <div class='content'>
                 <h2>Register</h2>
                 <div>
-                    <form class='registration-form' id='registration-form' action='customer_submit' method='POST'
+                    <form class='registration-form' id='registration-form' action='register' method='POST'
                         autocomplete="off">
                         @csrf
                         <div class='form-input'>
@@ -52,7 +44,7 @@
                             <label for='password_confirmation' class='form-label'>Confirm Password</label>
                         </div>
                         @if ($errors->any())
-                            <div class="error">
+                            <div class="server-errors error">
                                 <ul>
                                     @foreach ($errors->all() as $error)
                                         <li>{{ $error }}</li>

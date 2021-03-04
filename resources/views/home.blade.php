@@ -8,7 +8,10 @@
 
     </script>
     <h1>Home</h1>
-    <b>{{ $username ?? null }}</b>
+
+    <form id="logout-form" action="logout" method="POST" class="d-none">
+        @csrf
+    </form>
 @endsection
 
 @section('sidebar')

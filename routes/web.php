@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\CustomerController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -51,3 +54,15 @@ Route::post('customer_submit', [CustomerController::class, 'store']);
 Route::get('customer_edit/{id}', [CustomerController::class, 'edit']);
 
 Route::post('customer_update/{id}', [CustomerController::class, 'update'])->name('customer.update');
+
+// Add auth routes and disable default login, logout and register
+Auth::routes(['login' => false, 'logout' => false, 'register' => false]);
+
+// Create custom routes for login, logout and register
+Route::post('login', [LoginController::class, 'authenticate']);
+
+Route::post('logout', [LoginController::class, 'logout']);
+
+Route::post('register', [RegisterController::class, 'store']);
+
+//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
