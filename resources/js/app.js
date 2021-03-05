@@ -24,10 +24,6 @@ jQuery(function () {
     })
 
     $('.navitem.account').on('click', function() {
-        /*if(logged != null) {
-            window.location.href = '/account';
-            return true;
-        }*/
         $('.login').toggleClass('active');
     })
 
