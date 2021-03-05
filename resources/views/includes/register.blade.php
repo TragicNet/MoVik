@@ -16,7 +16,7 @@
                 <h2>Register</h2>
                 <div>
                     <form class='registration-form' id='registration-form' action='register' method='POST'
-                        autocomplete="off">
+                        autocomplete="on">
                         @csrf
                         <div class='form-input'>
                             <input type='text' name='name' id='name' value='' required />

@@ -15,7 +15,7 @@
             <div class='content'>
                 <h2>Login</h2>
                 <div class='login-form'>
-                    <form id='login-form' action='login' method='POST' autocomplete="off">
+                    <form id='login-form' action='login' method='POST' autocomplete="on">
                         @csrf
                         <div class='form-input'>
                             <input type='text' name='email' id='login-email' value='' required />
