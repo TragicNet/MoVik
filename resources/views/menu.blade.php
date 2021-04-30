@@ -12,12 +12,14 @@
         <tr>
             <td>Name</td>
             {{-- <td>img_path</td> --}}
+            <td></td>
             <td>Description</td>
             <td>Price</td>
         </tr>
         @foreach ($items as $item)
             <tr>
                 <td>{{ $item->name }}</td>
+                <td><img src="{{ URL::asset($item->img_path) }}" alt="" height="100px"></td>
                 {{-- <td>{{ $item->img_path }}</td> --}}
                 <td>{{ $item->description }}</td>
                 <td>{{ $item->price }}</td>

@@ -14,7 +14,7 @@
                 <td>Name</td>
                 <td><input type="text" name="name" required></td>
             </tr>
-            <input type="text" name="img_path" value="public/pizza.jpg" hidden>
+            <input type="text" name="img_path" value="/img/pizza.jpg" hidden>
             <tr>
                 <td>Description</td>
                 <td><textarea name="description" required></textarea></td>
