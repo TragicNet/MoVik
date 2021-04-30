@@ -2,7 +2,7 @@
     <div class="navbar">
         <a class="navitem home" href="home">MoVik</a>
         <a class="navitem menu" href="menu">Menu</a>
-        <a class="navitem order" href="">Order</a>
+        {{-- <a class="navitem order" href="">Order</a> --}}
         <div class="space"></div>
         @guest
             <a class="navitem" href="javascript:;" onclick="$('.login').toggleClass('active');">{{ __('Login') }}</a>

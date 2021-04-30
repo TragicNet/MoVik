@@ -76,7 +76,9 @@ class CustomerController extends Controller
     public function edit(Customer $customer, $id)
     {
         //
-        return view('customer_edit')->with('customer', Customer::find($id));
+        echo $customer.
+        return "abc";
+        //return view('customer_edit')->with('customer', Customer::find($id));
     }
 
     /**
@@ -110,9 +112,6 @@ class CustomerController extends Controller
      */
     public function destroy(Customer $customer, $id)
     {
-        //
-        /*echo '<pre>';
-        print_r($id);*/
         Customer::destroy(array('id', $id));
         return redirect('customer_show');
     }
