@@ -25,7 +25,7 @@ Route::get('', function () {
 
 Route::get('home', function () {
     return view('home');
-});
+})->name('home');
 
 Route::get('menu', function () {
     return view('menu')->with('items', app(FoodItemController::class)->getFoodItems());
@@ -43,17 +43,21 @@ Route::get('account', function () {
     return view('account');
 });
 
-Route::get('food_index', [FoodItemController::class, 'index']);
+Route::group(['middleware' => ['auth', 'admin']], function () {
+    Route::get('food_index', [FoodItemController::class, 'index']);
 
-Route::get('food_delete/{id}', [FoodItemController::class, 'destroy']);
+    Route::get('food_delete/{id}', [FoodItemController::class, 'destroy']);
 
-Route::get('food_create', [FoodItemController::class, 'create']);
+    Route::get('food_create', [FoodItemController::class, 'create']);
 
-Route::post('food_submit', [FoodItemController::class, 'store']);
+    Route::post('food_submit', [FoodItemController::class, 'store']);
 
-Route::get('food_edit/{id}', [FoodItemController::class, 'edit']);
+    Route::get('food_edit/{id}', [FoodItemController::class, 'edit']);
 
-Route::post('food_update/{id}', [FoodItemController::class, 'update'])->name('food_update');
+    Route::post('food_update/{id}', [FoodItemController::class, 'update'])->name('food_update');
+});
+
+Route::get('food_order/{id}', [FoodItemController::class, 'order']);
 
 // Add auth routes and disable default login, logout and register
 Auth::routes(['login' => false, 'logout' => false, 'register' => false]);

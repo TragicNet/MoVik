@@ -44,7 +44,7 @@
     <main>
         @yield('content')
 
-        @include('includes.sidebar')
+        {{-- @include('includes.sidebar') --}}
     </main>
 
     <div class="scroll-to-top bottom-right">

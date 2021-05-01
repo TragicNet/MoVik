@@ -23,10 +23,6 @@ jQuery(function () {
         $(document.documentElement).toggleClass('theme-dark');
     })
 
-    $('.navitem.account').on('click', function() {
-        $('.login').toggleClass('active');
-    })
-
     function close(element) {
         //ele.find('form').trigger('reset');
         element.find('form').validate().resetForm();

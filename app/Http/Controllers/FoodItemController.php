@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\FoodItem;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class FoodItemController extends Controller
@@ -111,5 +112,19 @@ class FoodItemController extends Controller
     public function getFoodItems()
     {
         return FoodItem::all();
+    }
+
+    public static function order(Request $request, $id)
+    {
+        if (Auth::check()) {
+            $item = FoodItem::find($id);
+            $orderlist_id = DB::table('orderlist')->insertGetId(['user_id' => Auth::user()->id, 'created_at' => now(), 'updated_at' => now()]);
+            DB::table('orderitem')->insert(['orderlist_id' => $orderlist_id, 'item_id' => $id, 'created_at' => now(), 'updated_at' => now()]);
+            DB::table('payment')->insert(['orderlist_id' => $orderlist_id, 'amount' => $item->price, 'created_at' => now(), 'updated_at' => now()]);
+            $request->session()->flash('msg', 'Your Order has been Placed!');
+        } else {
+            $request->session()->flash('msg', 'Please Login First!');
+        }
+        return redirect()->back();
     }
 }

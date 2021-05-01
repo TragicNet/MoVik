@@ -11,7 +11,6 @@
     <table cellspacing=10>
         <tr>
             <td>Name</td>
-            {{-- <td>img_path</td> --}}
             <td></td>
             <td>Description</td>
             <td>Price</td>
@@ -19,13 +18,11 @@
         @foreach ($items as $item)
             <tr>
                 <td>{{ $item->name }}</td>
-                <td><img src="{{ URL::asset($item->img_path) }}" alt="" height="100px"></td>
-                {{-- <td>{{ $item->img_path }}</td> --}}
+                <td><img src="{{ URL::asset($item->img_path) }}" alt="" height="100px" width="100px"
+                        style="object-fit: cover"></td>
                 <td>{{ $item->description }}</td>
                 <td>{{ $item->price }}</td>
-                <td><a href="">Order</a></td>
-                {{-- <td><a href="food_delete/{{ $item->id }}">Delete</a></td>
-                <td><a href="food_edit/{{ $item->id }}">Edit</a></td> --}}
+                <td><a href="food_order/{{ $item->id }}">Order</a></td>
             </tr>
         @endforeach
     </table>
