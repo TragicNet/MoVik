@@ -50,9 +50,9 @@ Route::group(['middleware' => ['auth', 'admin']], function () {
 
     Route::get('food_create', [FoodItemController::class, 'create']);
 
-    Route::post('food_submit', [FoodItemController::class, 'store']);
-
     Route::get('food_edit/{id}', [FoodItemController::class, 'edit']);
+
+    Route::post('food_submit', [FoodItemController::class, 'store']);
 
     Route::post('food_update/{id}', [FoodItemController::class, 'update'])->name('food_update');
 });
