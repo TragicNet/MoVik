@@ -27,12 +27,11 @@
         <?php $i = 1; ?>
         @foreach ($orders as $order)
             <tr>
-                @if ($order->id >= $i)
-                    <td>{{ $i++ }}</td>
-                @endif
+                <td>{{ $i++ }}</td>
                 <td>{{ $order->name }}</td>
                 <td><img src="{{ URL::asset($order->img_path) }}" alt="" height="100px" width="100px"
-                        style="object-fit: cover"></td>
+                        style="object-fit: cover">
+                </td>
                 <td>{{ $order->description }}</td>
                 <td>{{ $order->price }}</td>
                 <td>{{ $order->created_at }}</td>
