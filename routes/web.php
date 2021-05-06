@@ -40,9 +40,11 @@ Route::get('detail', function () {
     return view('detail');
 });
 
+Route::group(['middleware' => ['auth']], function () {
+    Route::get('account', [UserController::class, 'getOrders']);
+});
 
 Route::group(['middleware' => ['auth', 'admin']], function () {
-    Route::get('account', [UserController::class, 'getOrders']);
 
     Route::get('food_index', [FoodItemController::class, 'index']);
 
