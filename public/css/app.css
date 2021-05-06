@@ -19,6 +19,7 @@ body {
   background-attachment: fixed;
   background-size: cover;
   background-position: 50%;
+  line-height: 1.6;
 }
 .theme-light body {
   color: #202020;

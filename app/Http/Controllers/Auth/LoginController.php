@@ -42,7 +42,6 @@ class LoginController extends Controller
 
     public function authenticate(Request $request)
     {
-        //dd($request->all());
         $attr = $request->only(['email', 'password']);
         Auth::attempt(['email' => $request['email'], 'password' => $request['password']]);
         if (Auth::check()) {

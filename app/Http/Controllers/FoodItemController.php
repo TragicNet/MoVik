@@ -114,7 +114,7 @@ class FoodItemController extends Controller
         return FoodItem::all();
     }
 
-    public static function order(Request $request, $id)
+    public function order(Request $request, $id)
     {
         if (Auth::check()) {
             $item = FoodItem::find($id);

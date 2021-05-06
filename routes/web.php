@@ -3,6 +3,7 @@
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\FoodItemController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -39,11 +40,10 @@ Route::get('detail', function () {
     return view('detail');
 });
 
-Route::get('account', function () {
-    return view('account');
-});
 
 Route::group(['middleware' => ['auth', 'admin']], function () {
+    Route::get('account', [UserController::class, 'getOrders']);
+
     Route::get('food_index', [FoodItemController::class, 'index']);
 
     Route::get('food_delete/{id}', [FoodItemController::class, 'destroy']);
